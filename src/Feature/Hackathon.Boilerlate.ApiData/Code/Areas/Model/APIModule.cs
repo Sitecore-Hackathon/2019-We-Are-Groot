@@ -12,7 +12,8 @@ namespace Hackathon.Boilerlate.Api.Areas.Model
         public MultilistField SelectedHeaderValues { get; set; }
         public IEnumerable<InputParams> HeaderValues { get; set; }
         public MultilistField SelectedInputList { get; set; }
-        public IEnumerable<InputParams> InputParameters { get; set; }
+        public string InputParameters { get; set; }
+        public string OutputParameters { get; set; }
     }
 
     public class InputParams

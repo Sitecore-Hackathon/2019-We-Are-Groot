@@ -1,8 +1,10 @@
 ﻿using Hackathon.Boilerlate.Api.Areas.Model;
 using Newtonsoft.Json;
 using Sitecore.Data.Fields;
+using Sitecore.Diagnostics;
 using Sitecore.Mvc.Controllers;
 using Sitecore.Mvc.Presentation;
+using Sitecore.SecurityModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +18,7 @@ namespace Hackathon.Boilerlate.Api.Areas.Controller
     public class APIModuleController : SitecoreController
     {
         // GET: Controller/APIModule
-        public override ActionResult Index()
+        public ActionResult GetJsonResults()
         {
             var APIData = RenderingContext.Current.Rendering.Item;
             APIModule datasource = new APIModule();
@@ -24,11 +26,20 @@ namespace Hackathon.Boilerlate.Api.Areas.Controller
             datasource.SelectedHeaderValues = APIData.Fields["Select Header Parameters"];
             datasource.HeaderValues = selectedMultilistValues(datasource.SelectedHeaderValues);
             datasource.SelectedInputList = APIData.Fields["Select Input Parameters"];
-            datasource.InputParameters = selectedMultilistValues(datasource.SelectedInputList);
+            datasource.InputParameters = selectedChildMultilistValues(datasource.SelectedInputList);
 
             var apiResult = InvokeJson<dynamic>(datasource);
-
-            return View("~/Views/APIModule.cshtml", apiResult);
+            string JsonResult = "Result:" +Convert.ToString(apiResult);
+            datasource.OutputParameters = JsonResult;
+            Log.Info("Before Editing", this);
+            using (new SecurityDisabler())
+            {
+                APIData.Editing.BeginEdit();
+                APIData.Fields["ApiOutput"].Value = JsonResult;
+                APIData.Editing.EndEdit();
+            }
+            Log.Info("After Editing", this);
+            return View("~/Areas/Views/APIModule.cshtml", datasource);
         }
 
         public IEnumerable<InputParams> selectedMultilistValues(MultilistField data)
@@ -39,6 +50,17 @@ namespace Hackathon.Boilerlate.Api.Areas.Controller
                 Value = x.Fields["Value"].ToString()
             });
             return selectedInputs;
+        }
+        public string selectedChildMultilistValues(MultilistField data)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("{");
+            foreach (var items in data.GetItems())
+            {
+                sb.AppendLine(string.Format(@"""{0}"":""{1}"",", items.Fields["Key"].ToString(), items.Fields["Value"].ToString()));
+            }
+            sb.AppendLine("}");
+            return sb.ToString();
         }
 
         public static T InvokeJson<T>(APIModule requestData) where T : class

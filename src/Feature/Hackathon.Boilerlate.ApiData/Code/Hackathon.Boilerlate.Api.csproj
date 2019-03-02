@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Controller\APIModuleController.cs" />
+    <Compile Include="Areas\Controller\AppApiController.cs" />
     <Compile Include="Areas\Model\APIModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

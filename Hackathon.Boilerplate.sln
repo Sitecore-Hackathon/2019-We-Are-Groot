@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{17DD5718-6E13-4F2C-9738-B410396D4552}"
 EndProject
@@ -27,9 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D27C83
 	ProjectSection(SolutionItems) = preProject
 		documentation\images\deal-with-it.gif = documentation\images\deal-with-it.gif
 		documentation\images\hackathon.png = documentation\images\hackathon.png
+		TextFile1.txt = TextFile1.txt
+		TextFile2.txt = TextFile2.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{8521BFE1-D69E-4BFE-8A77-B3D0DF2F666F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hackathon.Boilerlate.ApiData", "Hackathon.Boilerlate.ApiData", "{8C296D40-10C8-422B-AA3E-A8EB7CD10DB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackathon.Boilerlate.Api", "src\Feature\Hackathon.Boilerlate.ApiData\Code\Hackathon.Boilerlate.Api.csproj", "{0A25290A-5F20-4640-A13E-B3E6731D5FB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,17 +41,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8521BFE1-D69E-4BFE-8A77-B3D0DF2F666F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8521BFE1-D69E-4BFE-8A77-B3D0DF2F666F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8521BFE1-D69E-4BFE-8A77-B3D0DF2F666F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8521BFE1-D69E-4BFE-8A77-B3D0DF2F666F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A25290A-5F20-4640-A13E-B3E6731D5FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A25290A-5F20-4640-A13E-B3E6731D5FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A25290A-5F20-4640-A13E-B3E6731D5FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A25290A-5F20-4640-A13E-B3E6731D5FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D27C83D2-2EAF-4E44-A1ED-2B3C2EBB5854} = {DAFED8F5-6CBD-4384-AAD6-DC3BCCF24911}
-		{8521BFE1-D69E-4BFE-8A77-B3D0DF2F666F} = {17DD5718-6E13-4F2C-9738-B410396D4552}
+		{8C296D40-10C8-422B-AA3E-A8EB7CD10DB5} = {17DD5718-6E13-4F2C-9738-B410396D4552}
+		{0A25290A-5F20-4640-A13E-B3E6731D5FB3} = {8C296D40-10C8-422B-AA3E-A8EB7CD10DB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45

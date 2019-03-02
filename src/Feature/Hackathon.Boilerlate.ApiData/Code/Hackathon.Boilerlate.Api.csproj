@@ -190,6 +190,7 @@
     <Content Include="Views\web.config" />
     <Content Include="Areas\Views\APIModule.cshtml" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\locol.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

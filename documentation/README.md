@@ -10,42 +10,24 @@ Examples of things to include are the following.
 
 **Category:** Hackathon Category
 
-What is the purpose of your module? What problem does it solve and how does it do that?
+Module Purpose: The API connector module in SXA is a module designed for the convenience of the Marketers or the developers to fetch the values securely from the client server, filter out the relevant data using and use the data effectively for other operations to just show the data in page, use computation methods to manipulate the data or just to check out what data is coming from the API. This might also be used in the Data exchange framework to fetch the data and store it as Sitecore items.
+
+Module Sitecore Hackathon category: Best extension of the editing experience for SXA in Experience Editor
+
+How Does the end user use the Module: The targeted audience for the module become the Marketers and the non Sitecore developers who struggle day in day out to understand what data the Client API fetches and to effectively filter out the data using the input parameters? They can now connect to the API connector module in SXA provide the URL, provide the header parameters if required and view the data in JSON format. They can also filter out the data by providing specific and relevant input parameters to the API’s.
+
+
 
 ## Pre-requisites
 
 Does your module rely on other Sitecore modules or frameworks?
 
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- SXA
 
-## Installation
-
-Provide detailed instructions on how to install the module, and include screenshots where necessary.
-
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ???
-3. Profit
 
 ## Configuration
 
-How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
-
-Remember you are using Markdown, you can provide code samples too:
-
-```xml
-<?xml version="1.0"?>
-<!--
-  Purpose: Configuration settings for my hackathon module
--->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-  <sitecore>
-    <settings>
-      <setting name="MyModule.Setting" value="Hackathon" />
-    </settings>
-  </sitecore>
-</configuration>
+- Sitecore SXA Module 
 ```
 
 ## Usage
@@ -66,6 +48,5 @@ And you can embed external images too:
 
 ## Video
 
-Please provide a video highlighing your Hackathon module submission and provide a link to the video. Either a [direct link](https://www.youtube.com/watch?v=EpNhxW4pNKk) to the video, upload it to this documentation folder or maybe upload it to Youtube...
-
-[![Sitecore Hackathon Video Embedding Alt Text](https://img.youtube.com/vi/EpNhxW4pNKk/0.jpg)](https://www.youtube.com/watch?v=EpNhxW4pNKk)
+Please find the Youtube link
+(https://www.youtube.com/watch?v=QLYVu2vovXE) to the video, 
